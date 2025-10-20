@@ -1,34 +1,3 @@
-# Flutter/Dart
-.dart_tool/
-.pub-cache/
-.packages
-.flutter-plugins
-.flutter-plugins-dependencies
-build/
-.idea/
-.vscode/
-.gradle/
-ios/Pods/
-ios/Flutter/Flutter.framework
-ios/Flutter/Flutter.podspec
-ios/ServiceDefinitions.json
-android/.gradle/
-.DS_Store
-*.iml
-
-# Generated files
-pubspec.lock
-
-# Local secrets
-.env
-*.keystore
-
-# IntelliJ
-*.iws
-*.ipr
-
-# macOS
-.DS_Store
 # Miscellaneous
 *.class
 *.log
@@ -74,3 +43,27 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/.flutter-plugins
+/.flutter-plugins-dependencies
+/.packages
+/.metadata
+
+# Android
+**/local.properties
+**/*.iml
+**/.gradle
+**/app/*.keystore
+
+# Xcode
+ios/Runner.xcodeproj/project.xcworkspace/
+ios/Flutter/ephemeral/
+
+# Secrets
+*.jks
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+.env
+.env.*
+
+# OneDrive temp files
+~$*

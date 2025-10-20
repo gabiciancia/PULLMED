@@ -1,44 +1,41 @@
-# PullMed (Flutter)
+# PullMed
 
-Projeto Flutter para gerenciamento de dados médicos com gravação em NFC e integração com Supabase.
+Aplicativo Flutter para dados médicos pessoais e gravação em NFC.
 
-## Preparar para desenvolvimento
+## Preparar repositório antes do push
 
-- Instale Flutter e configure o ambiente (https://flutter.dev/docs/get-started/install).
-- Execute `flutter pub get` para instalar dependências.
+1. Remova chaves sensíveis do código. Em particular, remova ou substitua o `anonKey` do Supabase em `lib/main.dart`.
+	- Preferível: armazenar chaves em variáveis de ambiente e passar via `--dart-define` no build.
 
-## Rodar no Android
+2. Confirme que `.gitignore` está presente (ele já foi atualizado).
 
-- Conecte um dispositivo ou use um emulador.
-- `flutter run`
+3. Opcional: crie um arquivo `.env` local para variáveis e não o comite.
 
-## Rodar no iOS (via Xcode)
+## Criar repositório remoto e enviar
 
-- Abra `ios/Runner.xcworkspace` no Xcode.
-- Ajuste o signing (Team) nas configurações do projeto.
-- Rode no dispositivo físico (NFC não funciona no simulador).
+No terminal, execute (substitua o email/nome conforme necessário):
 
-## Segurança / Segredos
+```powershell
+git config user.name "Gabriela"
+git config user.email "gabriela@example.com"
+# crie o repo no GitHub (ou use a UI do GitHub)
+# localmente:
+git add .
+git commit -m "Prepare project for GitHub"
+# adicione o remote (SSH)
+git remote add origin git@github.com:gabiciancia/PULLMED.git
+# ou com HTTPS:
+# git remote add origin https://github.com/gabiciancia/PULLMED.git
 
-O projeto atualmente contém uma `anonKey` do Supabase no código para facilitar testes. Antes de publicar no GitHub, mova essa chave para variáveis de ambiente e remova do código.
+git push -u origin main
+```
 
-Sugestão rápida:
+Se o push falhar por autenticação, configure o SSH (adicionar chave pública no GitHub) ou use `gh auth login`.
 
-1. Crie um arquivo `.env` (não comitar) e defina `SUPABASE_ANON_KEY=...`.
-2. Use um pacote como `flutter_dotenv` para carregar a variável em tempo de execução.
-# flutter_application_1
+## Build para iOS
 
-A new Flutter project.
+Abra `ios/Runner.xcworkspace` no Xcode e rode no dispositivo.
 
-## Getting Started
+## Notas
+- Remova chaves sensíveis antes de publicar. O projeto contém o `anonKey` atualmente; substitua por uma variável de ambiente antes de mandar pro GitHub.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-start ed/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
