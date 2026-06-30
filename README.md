@@ -1,72 +1,53 @@
-# PullMed
+# PULLMED
 
-<<<<<<< HEAD
-Aplicativo Flutter (Android/iOS) para cadastro de dados médicos e gravação em NFC.
+Flutter application (Android/iOS) for entering medical data and writing it to an NFC tag, part of the **PULLMED** project — an NFC-based medical-ID wristband for emergency use.
 
-Visão rápida:
-- Login e autenticação via Supabase
-- Cadastro/edição de anamnese (dados médicos)
-- Geração de link único por usuário e gravação em tag NFC
+## Overview
 
-Pré-requisitos:
+- Login and authentication via Supabase
+- Entry and editing of medical history (anamnesis)
+- Generation of a unique per-user URL and writing it to the wristband's NFC tag
+- Companion website that renders the record from the URL
+
+## Prerequisites
+
 - Flutter SDK
-- Android Studio / Xcode para builds em dispositivos
+- Android Studio (for Android) or Xcode (for iOS) to build on devices
 
-Como rodar (exemplo Android):
+## Running the app
 
-```powershell
+Supabase keys are passed at build time via `--dart-define` and **must not be hard-coded in the source**.
+
+Android:
+
+```bash
 flutter pub get
-flutter run -d <device> --dart-define=SUPABASE_URL="https://your.supabase.url" --dart-define=SUPABASE_ANON_KEY="your-anon-key"
+flutter run -d <device> \
+  --dart-define=SUPABASE_URL="https://your.supabase.url" \
+  --dart-define=SUPABASE_ANON_KEY="your-anon-key"
 ```
 
-Rodar no iOS:
-- Abra `ios/Runner.xcworkspace` no Xcode e ajuste signing (Team). Rode em dispositivo físico (NFC não funciona no simulador).
+iOS:
 
-Segurança / Segredos:
-- Não mantenha chaves sensíveis no código. Use `--dart-define` ou variáveis de ambiente.
+- Open `ios/Runner.xcworkspace` in Xcode and set up signing (Team).
+- Run on a physical device — NFC does not work in the simulator.
 
-CI:
-- Workflow em `.github/workflows/flutter.yml` roda `flutter analyze` e `flutter test` em pushes/PRs.
+## Security and secrets
 
-Licença: MIT
+- Do not keep sensitive keys in the source code. Use `--dart-define` or environment variables.
+- Make sure Supabase Row Level Security (RLS) is enabled.
+- Optional: keep a local `.env` file out of version control (already covered by `.gitignore`).
 
-git rebase --continue
-=======
-Aplicativo Flutter para dados médicos pessoais e gravação em NFC.
+## Continuous integration (CI)
 
-## Preparar repositório antes do push
+- The workflow in `.github/workflows/flutter.yml` runs `flutter analyze` and `flutter test` on pushes and pull requests.
 
-1. Remova chaves sensíveis do código. Em particular, remova ou substitua o `anonKey` do Supabase em `lib/main.dart`.
-	- Preferível: armazenar chaves em variáveis de ambiente e passar via `--dart-define` no build.
+## How to cite
 
-2. Confirme que `.gitignore` está presente (ele já foi atualizado).
+If you use this project, please cite the versioned archive deposited on Zenodo:
 
-3. Opcional: crie um arquivo `.env` local para variáveis e não o comite.
+> G. Cianciarullo, B. B. Sardinha, G. I. F. Graziosi, T. G. da Silva, and L. Blassioli, *PULLMED: Source Code and Supplementary Materials for an Open, Low-Cost NFC Medical-ID Wristband*. Zenodo, 2026. DOI: 10.5281/zenodo.21084083
 
-## Criar repositório remoto e enviar
+## License
 
-No terminal, execute (substitua o email/nome conforme necessário):
-
-```powershell
-git config user.name "Gabriela"
-git config user.email "gabriela@example.com"
-# crie o repo no GitHub (ou use a UI do GitHub)
-# localmente:
-git add .
-git commit -m "Prepare project for GitHub"
-# adicione o remote (SSH)
-git remote add origin git@github.com:gabiciancia/PULLMED.git
-# ou com HTTPS:
-# git remote add origin https://github.com/gabiciancia/PULLMED.git
-
-git push -u origin main
-```
-
-Se o push falhar por autenticação, configure o SSH (adicionar chave pública no GitHub) ou use `gh auth login`.
-
-## Build para iOS
-
-Abra `ios/Runner.xcworkspace` no Xcode e rode no dispositivo.
-
-## Notas
-- Remova chaves sensíveis antes de publicar. O projeto contém o `anonKey` atualmente; substitua por uma variável de ambiente antes de mandar pro GitHub.
+Released under the MIT License. See the [LICENSE](LICENSE) file for the full terms.
