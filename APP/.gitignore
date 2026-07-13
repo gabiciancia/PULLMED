@@ -1,0 +1,80 @@
+# ==============================================================
+# PULLMED — .gitignore  (raiz do repositorio)
+#
+# Usa padroes **/ para funcionar em qualquer nivel de pasta,
+# inclusive com o Flutter dentro de APP/.
+#
+# ATENCAO: "#" so vale como comentario no INICIO da linha.
+# ==============================================================
+
+# ---- SEGREDOS: NUNCA COMMITAR --------------------------------
+**/.env
+**/.env.*
+
+# Chaves de desenvolvimento (o .example, sim, vai para o repo)
+**/.vscode/launch.json
+
+# Copias do main.dart com a anon key embutida
+**/*annonkey*
+**/*anonkey*
+**/*anon_key*
+**/main_com_*
+
+# Outros arquivos de segredo
+**/secrets.dart
+**/supabase_keys.dart
+**/*.pem
+**/*.key
+**/*.jks
+**/*.keystore
+**/*.mobileprovision
+**/*.p12
+
+# ---- Flutter / Dart ------------------------------------------
+**/.dart_tool/
+**/.packages
+**/.pub-cache/
+**/.pub/
+**/build/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+
+# ---- Android --------------------------------------------------
+**/.gradle/
+**/android/local.properties
+**/android/key.properties
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+
+# ---- iOS ------------------------------------------------------
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# ---- Web / Netlify --------------------------------------------
+**/.netlify/
+**/node_modules/
+
+# ---- CAD: arquivos temporarios do Inventor --------------------
+**/OldVersions/
+**/*.ipt.lck
+**/*.bak
+**/*.tmp
+
+# ---- IDE ------------------------------------------------------
+**/.idea/
+**/*.iml
+**/*.iws
+.vscode/*
+!.vscode/launch.json.example
+!.vscode/settings.json.example
+!.vscode/extensions.json
+
+# ---- OS -------------------------------------------------------
+**/.DS_Store
+**/Thumbs.db
+**/desktop.ini
