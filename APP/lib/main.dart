@@ -13,7 +13,7 @@ const String kSupabaseAnonKey =
     String.fromEnvironment('SUPABASE_ANON_KEY', defaultValue: '');
 
 /// Base of the public record URL. The token is appended.
-const String kRecordBaseUrl = 'https://pullmed.digital/r';
+const String kRecordBaseUrl = 'https://pullmed-medical-id.netlify.app/r';
 
 /// The Login field is a username, not an e-mail. Supabase Auth requires an
 /// e-mail, so one is synthesised. This keeps the existing screen intact.
