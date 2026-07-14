@@ -1,0 +1,30 @@
+# =====================================================================
+# PULLMED — Netlify
+# =====================================================================
+
+[build]
+  publish   = "public"
+  functions = "netlify/functions"
+
+# /r/<token>  ->  o renderizador. O token e lido do path pelo JS.
+[[redirects]]
+  from   = "/r/*"
+  to     = "/record.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Um registro de saude indexado pelo Google seria um gol contra evitavel.
+    X-Robots-Tag            = "noindex, nofollow, noarchive"
+    # Impede que o token vaze no cabecalho Referer ao clicar em qualquer link.
+    Referrer-Policy         = "no-referrer"
+    X-Content-Type-Options  = "nosniff"
+    X-Frame-Options         = "DENY"
+    Content-Security-Policy = "default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+[[headers]]
+  for = "/r/*"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate"
