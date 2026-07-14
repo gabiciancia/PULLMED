@@ -46,7 +46,7 @@ iOS:
 
 If you use this project, please cite the versioned archive deposited on Zenodo:
 
-> G. Cianciarullo, B. B. Sardinha, G. I. F. Graziosi, T. G. da Silva, and L. Blassioli, *PULLMED: Source Code and Supplementary Materials for an Open, Low-Cost NFC Medical-ID Wristband*. Zenodo, 2026. DOI: 10.5281/zenodo.21084083
+> G. Cianciarullo, B. B. Sardinha, G. I. F. Graziosi, T. G. da Silva, and L. Blassioli, *PULLMED: Source Code and Supplementary Materials for an Open, Low-Cost NFC Medical-ID Wristband*. Zenodo, 2025. DOI: 10.5281/zenodo.21084083
 
 ## License
 
